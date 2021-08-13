@@ -1,3 +1,8 @@
+const fs = require('fs')
+const path = require('path')
+
+const CodeWriter = require('./code-writer')
+
 function getViews (diagram, type) {
   return diagram.ownedViews
     .filter(view => view instanceof type)
@@ -9,7 +14,43 @@ function generateClasses (diagram, folder) {
     umlClass => (umlClass.stereotype || '').toLowerCase() === 'dataClass'
   )
 
-  dataClasses.forEach(dataClass => {})
+  if (!dataClasses.length) {
+    return app.toast.error('There is no classes to generate!')
+  }
+
+  dataClasses.forEach(dataClass => {
+    const codeWriter = new CodeWriter()
+
+    dataClass.attributes
+      .filter(attribute => attribute.type instanceof type.UMLEnumeration)
+      .forEach(({ name, literals }, attributeIndex) => {
+        codeWriter.writeLine(`enum ${name} {`)
+
+        codeWriter.indent()
+
+        literals.forEach(({ name, documentation }, literalIndex) => {
+          if (documentation !== '') {
+            writer.writeLines(
+              documentation.split('\n').map(line => `/// ${line}`)
+            )
+          }
+
+          codeWriter.writeLine(`${name},`)
+
+          if (literalIndex !== literals.length - 1) {
+            codeWriter.writeLine('')
+          }
+        })
+
+        codeWriter.outdent()
+
+        codeWriter.writeLine('}')
+
+        if (attributeIndex !== literals.length - 1) {
+          codeWriter.writeLine('')
+        }
+      })
+  })
 }
 
 function getOutputFolderAndGenerateClasses (diagram) {

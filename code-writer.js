@@ -39,7 +39,7 @@ class CodeWriter {
    * Indent.
    */
   indent () {
-    this.indentations.push('    ')
+    this.indentations.push('  ')
   }
 
   /**
