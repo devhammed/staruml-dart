@@ -52,7 +52,7 @@ function initializeExtension () {
   app.commands.register(
     'dart:generate',
     handleDartGenerateCommand,
-    'Dart Generate'
+    'Generate Dart Data Classes'
   )
 }
 
