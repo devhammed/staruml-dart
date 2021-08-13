@@ -1,7 +1,7 @@
 {
   "name": "staruml-dart",
   "title": "StarUML Dart",
-  "description": "Generate Dart data classes from StarUML UML class diagrams.",
+  "description": "Generate Dart Data Classes from StarUML UML Class Diagrams.",
   "homepage": "https://github.com/devhammed/staruml-laravel",
   "version": "1.0.0",
   "main": "main.js",
