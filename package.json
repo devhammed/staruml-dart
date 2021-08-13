@@ -1,0 +1,21 @@
+{
+  "name": "staruml-dart",
+  "title": "StarUML Dart",
+  "description": "Generate Dart data classes from StarUML UML class diagrams.",
+  "homepage": "https://github.com/devhammed/staruml-laravel",
+  "version": "1.0.0",
+  "main": "main.js",
+  "keywords": ["staruml", "dart"],
+  "author": {
+    "name": "Hammed Oyedele",
+    "email": "itz.harmid@gmail.com",
+    "url": "https://github.com/devhammed"
+  },
+  "license": "MIT",
+  "engines": {
+    "staruml": ">=3.0.0"
+  },
+  "dependencies": {
+    "change-case": "^4.1.2"
+  }
+}

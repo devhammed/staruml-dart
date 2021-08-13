@@ -1,0 +1,14 @@
+{
+  "menu": [
+    {
+      "id": "tools",
+      "submenu": [
+        {
+          "command": "dart:generate",
+          "id": "tools.dart.generate",
+          "label": "Generate Dart Classes..."
+        }
+      ]
+    }
+  ]
+}
