@@ -25,7 +25,7 @@ function getOutputFolderAndGenerateClasses (diagram) {
   }
 }
 
-function handleLaravelGenerateCommand (diagram, folder) {
+function handleDartGenerateCommand (diagram, folder) {
   if (!diagram || !diagram instanceof type.UMLClassDiagram) {
     app.elementListPickerDialog
       .showDialog(
